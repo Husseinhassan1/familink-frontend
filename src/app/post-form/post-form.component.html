@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="post-form.component.css">
+<div class="container">
+  <div class="title">
+    <label for="title"></label>
+    <input type="text" id="title" name="title" placeholder="Title">
+  </div>
+
+  <div class="desc">
+    <label for="descarea"></label>
+    <textarea id="descarea"></textarea>
+  </div>
+
+  <div class="age">
+    <label for="age">Age group</label>
+    <select id="age" name="Age group">
+      <option value="kids">kids</option>
+      <option value="teens">teens</option>
+      <option value="adults">adults</option>
+      <option value="everyone">everyone</option>
+    </select>
+  </div>
+
+  <div class="file">
+    <input type="file" id="myFile" name="filename">
+  </div>
+
+  <div class="tags">
+    <ul class="tags">
+      <li>Tag 1</li>
+      <li>Tag 2</li>
+      <li>Tag 3</li>
+    </ul>
+  </div>
+
+  <div class="privacy">
+    <label><input type="radio" name="privacy" value="private">private</label>
+    <label><input type="radio" name="privacy" value="public">public</label>
+  </div>
+
+  <button routerLink="/post-preview">Preview Post</button>
+</div>
