@@ -21,10 +21,16 @@ nav ul {
 }
 
 nav li {
+  list-style-type: none;
   margin-right: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  background: #cccccc;
 }
 
 nav li:last-child {
+
+  background: #18aa2b;
   margin-right: 0;
 }
 
