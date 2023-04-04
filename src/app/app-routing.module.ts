@@ -4,6 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
 import {SignupResolver} from "./resolvers/signup.resolver";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {
@@ -20,11 +21,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     resolve: { user: LoginResolver }
+  },
+  {
+    path: 'home',
+    component:HomeComponent,
   }
-  // {
-  //   path: 'home',
-  //   component:HomeComponent,
-  // }
 ];
 
 @NgModule({
