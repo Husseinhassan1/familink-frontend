@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UserProfile</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+</head>
+<body>
+<div class="header__wrapper">
+  <header></header>
+  <div class="cols__container">
+    <div class="left__col">
+      <div class="img__container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Muhammad_Ali_NYWTS.jpg" alt="ja" />
+        <span></span>
+      </div>
+      <h2>Muhammad Ali</h2>
+      <p>Champion of the World 🥊</p>
+      <p>champ@example.com </p>
+
+      <ul class="about">
+        <li><span>3M+</span>Followers</li>
+        <li><span><a style="color: black; " routerLink='/userprofile/followinglist'>1</a></span> <a style="color: gray; " routerLink='/userprofile/followinglist'>Following</a></li>
+        <li><span>6</span>Posts</li>
+      </ul>
+
+      <div class="content">
+        <p>
+          “I’ve wrestled with alligators. I’ve tussled with a whale. I done handcuffed lightning. And thrown thunder in jail.”
+        </p>
+
+        <ul>
+          <li><i class="fab fa-twitter"></i></li>
+          <i class="fab fa-pinterest"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-dribbble"></i>
+        </ul>
+      </div>
+    </div>
+    <div class="right__col">
+      <nav>
+        <ul>
+          <li><a href="">photos</a></li>
+          <li><a href="">galleries</a></li>
+          <li><a href="">groups</a></li>
+          <li><a href="">about</a></li>
+        </ul>
+        <div>
+          <button mat-raised-button color="primary">Follow</button>
+
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+          <button mat-menu-item>Report</button>
+        </mat-menu>
+        </div>
+      </nav>
+
+      <div class="photos">
+        <img src="https://cdn.theatlantic.com/thumbor/ZV-8Da37Lay-cYYwDqChqB0j65U=/233x42:2777x1950/1200x900/media/img/mt/2016/06/AP_6705110184-1/original.jpg" alt="Photo" />
+        <img src="https://hips.hearstapps.com/hmg-prod/images/on-this-day-in1974-muhammad-ali-beats-george-foreman-in-the-news-photo-830109608-1562104695.jpg?crop=0.998xw:0.425xh;0.00160xw,0.236xh&resize=1200:*" alt="Photo" />
+        <img src="https://ca-times.brightspotcdn.com/dims4/default/881c5f6/2147483647/strip/true/crop/1728x1152+160+0/resize/1440x960!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F12%2Ff6%2F0a7b314bd61639f4089c3d19e828%2Flat-sp-muhammad-ali-angelo-dundee-20141228" alt="Photo" />
+        <img src="https://www.hollywoodreporter.com/wp-content/uploads/2016/06/muhammad_ali_vs_norton_0.jpg?w=3000" alt="Photo" />
+        <img src="https://cdn.europosters.eu/image/750/posters/muhammad-ali-vintage-i11179.jpg" alt="Photo" />
+        <img src="https://andscape.com/wp-content/uploads/2016/06/gettyimages-517259310_master1.jpg" alt="Photo" />
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

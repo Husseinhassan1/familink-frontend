@@ -4,7 +4,9 @@ import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
 import {SignupResolver} from "./resolvers/signup.resolver";
-
+import {UserprofileComponent} from "./userprofile/userprofile.component";
+import {FollowinglistComponent} from "./followinglist/followinglist.component";
+//import {UserProfileResolve} from "./resolvers/userprofile.resolver";
 const routes: Routes = [
   {
     path: '',
@@ -20,7 +22,18 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     resolve: { user: LoginResolver }
-  }
+  },
+  {
+       path: 'userprofile',
+      component:UserprofileComponent,
+  //   resolve: {
+  //     UserProfileResolve
+  // }
+    },
+    {
+       path: 'userprofile/followinglist',
+       component:FollowinglistComponent,
+    }
   // {
   //   path: 'home',
   //   component:HomeComponent,
