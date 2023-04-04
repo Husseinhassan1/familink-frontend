@@ -41,6 +41,7 @@ import {AdminComponent} from "./admin/admin.component";
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatButtonModule
   ],
 
   providers: [],

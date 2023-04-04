@@ -10,22 +10,15 @@ import {HomeComponent} from "./home/home.component";
 import {UserprofileComponent} from "./userprofile/userprofile.component";
 import {FollowinglistComponent} from "./followinglist/followinglist.component";
 import {AdminComponent} from "./admin/admin.component";
+//import {UserProfileResolve} from "./resolvers/userprofile.resolver";
 
 const routes: Routes = [
 
+  { path: 'post-form', component: PostFormComponent },
+  { path: 'post-preview', component: PostPreviewComponent },
+
   {
-    path: '', redirectTo: '/post-form',
-    pathMatch: 'full'
-  },
-  {
-    path: 'post-form',
-    component: PostFormComponent
-  },
-  {
-    path: 'post-preview',
-    component: PostPreviewComponent
-  },
-  {
+
     path: '',
     component: LoginComponent,
     resolve: { user: LoginResolver }
