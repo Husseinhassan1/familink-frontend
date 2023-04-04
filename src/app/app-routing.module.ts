@@ -1,5 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { PostFormComponent } from './post-form/post-form.component';
+import { PostPreviewComponent } from './post-preview/post-preview.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/post-form', pathMatch: 'full' },
+  { path: 'post-form', component: PostFormComponent },
+  { path: 'post-preview', component: PostPreviewComponent }
+];
+
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
@@ -26,6 +36,7 @@ const routes: Routes = [
   //   component:HomeComponent,
   // }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
