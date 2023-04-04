@@ -40,21 +40,16 @@ import { FollowinglistComponent } from './followinglist/followinglist.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
     FormsModule,
-        HttpClientModule,
-
-        NoopAnimationsModule
-
-        BrowserAnimationsModule,
-        MatMenuModule,
-        MatIconModule,
-        MatButtonModule
-    
-
-
+    HttpClientModule,
+    NoopAnimationsModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
-   
+
   providers: [],
   bootstrap: [AppComponent]
 })
