@@ -10,6 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+
+import { HomeComponent } from './home/home.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
@@ -18,38 +22,39 @@ import {MatButtonModule} from '@angular/material/button';
 import { FollowinglistComponent } from './followinglist/followinglist.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
+  LoginComponent,
 
+      SignupComponent,
+
+
+      SignupComponent,
+      UserprofileComponent,
+      FollowinglistComponent,
+
+      SignupComponent,
     PostFormComponent,
     PostPreviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
-
-    LoginComponent,
-
-    SignupComponent,
-    UserprofileComponent,
-    FollowinglistComponent
-
-    SignupComponent
-
-
-  ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
+    FormsModule,
         HttpClientModule,
+
+        NoopAnimationsModule
+
         BrowserAnimationsModule,
         MatMenuModule,
         MatIconModule,
         MatButtonModule
-    ],
+    
+
+
+  ],
+   
   providers: [],
   bootstrap: [AppComponent]
 })

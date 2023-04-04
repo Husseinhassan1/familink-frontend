@@ -14,9 +14,14 @@ import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
 import {SignupResolver} from "./resolvers/signup.resolver";
+
+import {HomeComponent} from "./home/home.component";
+
+
 import {UserprofileComponent} from "./userprofile/userprofile.component";
 import {FollowinglistComponent} from "./followinglist/followinglist.component";
 //import {UserProfileResolve} from "./resolvers/userprofile.resolver";
+
 const routes: Routes = [
   {
     path: '',
@@ -34,6 +39,12 @@ const routes: Routes = [
     resolve: { user: LoginResolver }
   },
   {
+
+    path: 'home',
+    component:HomeComponent,
+  },
+
+
        path: 'userprofile',
       component:UserprofileComponent,
   //   resolve: {
@@ -48,6 +59,7 @@ const routes: Routes = [
   //   path: 'home',
   //   component:HomeComponent,
   // }
+
 ];
 
 
