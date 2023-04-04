@@ -30,12 +30,8 @@ nav li {
 
 nav li:last-child {
 
-  background: #1d1d1d;
+  background: #18aa2b;
   margin-right: 0;
-}
-
-nav li:last-child a{
-  color: #fff;
 }
 
 nav a {

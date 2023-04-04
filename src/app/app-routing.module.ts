@@ -4,19 +4,17 @@ import { PostFormComponent } from './post-form/post-form.component';
 import { PostPreviewComponent } from './post-preview/post-preview.component';
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
-import {LoginResolver} from "./resolvers/login.resolver";
-import {SignupResolver} from "./resolvers/signup.resolver";
 import {HomeComponent} from "./home/home.component";
 import {UserprofileComponent} from "./userprofile/userprofile.component";
 import {FollowinglistComponent} from "./followinglist/followinglist.component";
-import {AdminComponent} from "./admin/admin.component";
+import {LoginResolver} from "./resolvers/login.resolver";
+import {SignupResolver} from "./resolvers/signup.resolver";
 //import {UserProfileResolve} from "./resolvers/userprofile.resolver";
 
 const routes: Routes = [
 
   { path: 'post-form', component: PostFormComponent },
   { path: 'post-preview', component: PostPreviewComponent },
-
   {
 
     path: '',
@@ -42,15 +40,18 @@ const routes: Routes = [
   {
        path: 'userprofile',
       component:UserprofileComponent,
-  },
-  {
+  //   resolve: {
+  //     UserProfileResolve
+  // }
+    },
+    {
        path: 'userprofile/followinglist',
        component:FollowinglistComponent,
-  },
-  {
-    path: 'admin',
-    component:AdminComponent,
-  }
+    }
+  // {
+  //   path: 'home',
+  //   component:HomeComponent,
+  // }
 
 ];
 
