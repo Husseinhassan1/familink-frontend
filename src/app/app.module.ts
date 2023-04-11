@@ -17,6 +17,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FollowinglistComponent } from './components/followinglist/followinglist.component';
 import {AdminComponent} from "./components/admin/admin.component";
+import { UserManagementComponent } from './components/user-management/user-management.component';
+import { UserComponent } from './components/user/user.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -30,6 +33,8 @@ import {AdminComponent} from "./components/admin/admin.component";
     PostPreviewComponent,
     HomeComponent,
     AdminComponent,
+    UserManagementComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import {AdminComponent} from "./components/admin/admin.component";
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
 
   providers: [],

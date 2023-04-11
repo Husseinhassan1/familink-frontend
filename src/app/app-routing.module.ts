@@ -10,6 +10,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {UserprofileComponent} from "./components/userprofile/userprofile.component";
 import {FollowinglistComponent} from "./components/followinglist/followinglist.component";
 import {AdminComponent} from "./components/admin/admin.component";
+import {UserManagementComponent} from "./components/user-management/user-management.component";
 
 const routes: Routes = [
 
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component:AdminComponent,
+  },
+  {
+    path: 'usermanagement',
+    component: UserManagementComponent,
   }
 
 ];
