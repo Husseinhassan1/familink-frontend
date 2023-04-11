@@ -19,7 +19,15 @@ export class SignupComponent {
 
   constructor(private router:Router, private signupService: SignupService) {
   }
+  isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    return emailRegex.test(email);
+  }
   signup() {
+    if (!this.isValidEmail(this.email)) {
+      this.errorMessage = 'Invalid email format';
+      return;
+    }
     if (this.password !== this.confirmPassword) {
       this.errorMessage = 'Passwords do not match';
       return;
@@ -28,8 +36,6 @@ export class SignupComponent {
     this.signupService.createUser(this.email, this.fullName, this.username, this.password)
       .subscribe(
         (user: User) => {
-          //tested with empty route and it took me back to login which means it works, only needs home
-          //to be created
           this.router.navigate(['home']);
         },
         (error: string) => {

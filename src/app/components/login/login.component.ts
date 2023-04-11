@@ -35,7 +35,7 @@ export class LoginComponent {
 
 
   forgotPassword() {
-    this.router.navigate(['']);
+    this.router.navigate(['forgot-password']);
   }
 
 }
