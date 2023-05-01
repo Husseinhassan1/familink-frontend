@@ -12,7 +12,8 @@ export class SignupComponent {
 
   email: string = '';
   password: string = '';
-  fullName: string = '';
+  firstName: string = '';
+  lastName: string = '';
   username: string = '';
   confirmPassword: string = '';
   errorMessage: string = '';
@@ -25,12 +26,11 @@ export class SignupComponent {
       return;
     }
 
-    this.signupService.createUser(this.email, this.fullName, this.username, this.password)
+    this.signupService.createUser(this.email, this.firstName, this.lastName, this.username, this.password)
       .subscribe(
         (user: User) => {
-          //tested with empty route and it took me back to login which means it works, only needs home
-          //to be created
-          this.router.navigate(['home']);
+
+          this.router.navigate(['login']);
         },
         (error: string) => {
           this.errorMessage = error;

@@ -5,7 +5,6 @@ import { PostPreviewComponent } from './post-preview/post-preview.component';
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
-import {SignupResolver} from "./resolvers/signup.resolver";
 import {HomeComponent} from "./home/home.component";
 import {UserprofileComponent} from "./userprofile/userprofile.component";
 import {FollowinglistComponent} from "./followinglist/followinglist.component";
@@ -26,7 +25,6 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
-    resolve: { user: SignupResolver }
   },
   {
     path: 'login',
