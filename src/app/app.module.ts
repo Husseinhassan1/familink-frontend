@@ -4,52 +4,54 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { PostFormComponent } from './post-form/post-form.component';
-import { PostPreviewComponent } from './post-preview/post-preview.component';
+import { PostPreviewComponent} from "./post-preview/post-preview.component";
 
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-
-import { HomeComponent } from './home/home.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
-import { UserprofileComponent } from './userprofile/userprofile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { HomeComponent } from "./home/home.component";
 import { FollowinglistComponent } from './followinglist/followinglist.component';
+import { LoginComponent } from "./login/login.component";
+import { SignupComponent} from "./signup/signup.component";
+import { UserprofileComponent } from "./userprofile/userprofile.component";
 
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
+//import { CommentListComponentComponent } from './comment-list-component/comment-list-component.component';
+//import { CommentComponentComponent } from './comment-component/comment-component.component';
+//import { CommentListComponent } from './comment-list/comment-list.component';
+//import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-  LoginComponent,
-
-      SignupComponent,
-
-
-      SignupComponent,
-      UserprofileComponent,
-      FollowinglistComponent,
-
-      SignupComponent,
     PostFormComponent,
-    PostPreviewComponent
+    PostPreviewComponent,
+    FollowinglistComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    UserprofileComponent
+    //CommentListComponentComponent,
+    //CommentComponentComponent,
+    //CommentListComponent,
+    //CommentComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    NoopAnimationsModule,
+    MatButtonModule,
     BrowserAnimationsModule,
-    MatMenuModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
     MatIconModule,
-    MatButtonModule
+    MatMenuModule,
+    FormsModule,
+    HttpClientModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })

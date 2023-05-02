@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 
 
 @Injectable({
@@ -16,6 +15,6 @@ export class UserprofileService {
 // id: 5,
  // UserName: 'Muhammad Ali🥊';
  // });
- }
+
 
 }

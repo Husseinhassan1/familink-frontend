@@ -9,52 +9,22 @@ import {UserprofileComponent} from "./userprofile/userprofile.component";
 import {FollowinglistComponent} from "./followinglist/followinglist.component";
 import {LoginResolver} from "./resolvers/login.resolver";
 import {SignupResolver} from "./resolvers/signup.resolver";
+//import {CommentsResolver} from "./resolvers/comment-resolver";
 //import {UserProfileResolve} from "./resolvers/userprofile.resolver";
 
 const routes: Routes = [
 
-  { path: 'post-form', component: PostFormComponent },
-  { path: 'post-preview', component: PostPreviewComponent },
-  {
-
-    path: '',
-    component: LoginComponent,
-    resolve: { user: LoginResolver }
-  },
-  {
-    path: 'signup',
-    component: SignupComponent,
-    resolve: { user: SignupResolver }
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    resolve: { user: LoginResolver }
-  },
-  {
-
-    path: 'home',
-    component:HomeComponent,
-  },
-
-  {
-       path: 'userprofile',
-      component:UserprofileComponent,
-  //   resolve: {
-  //     UserProfileResolve
-  // }
-    },
-    {
-       path: 'userprofile/followinglist',
-       component:FollowinglistComponent,
-    }
-  // {
-  //   path: 'home',
-  //   component:HomeComponent,
-  // }
+  {path: 'post-form', component: PostFormComponent },
+  {path: 'post-preview', component: PostPreviewComponent },
+  {path: '', component: LoginComponent, resolve: { user: LoginResolver }},
+  {path: 'signup', component: SignupComponent, resolve: { user: SignupResolver }},
+  {path: 'login', component: LoginComponent, resolve: { user: LoginResolver }},
+  {path: 'home', component:HomeComponent,},
+  {path: 'userprofile', component:UserprofileComponent},
+  {path: 'userprofile/followinglist', component:FollowinglistComponent,},
+ // {path: 'comments/:id', component: CommentListComponent, resolve: {comments: CommentResolver}}
 
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
