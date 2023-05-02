@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommentsService} from "../services/comment.service";
-import { Comment } from "../models/comment.model";
+// import { CommentsService} from "../services/comment.service";
+// import { Comment } from "../models/comment.model";
 
 @Component({
   selector: 'app-post',
@@ -8,7 +8,7 @@ import { Comment } from "../models/comment.model";
   styleUrls: ['./post-preview.component.css']
 })
 export class PostPreviewComponent {
-  constructor(private commentsService: CommentsService) {}
+  // constructor(private commentsService: CommentsService) {}
 
   likeCount: number = 0;
   liked: boolean = false;
@@ -36,17 +36,17 @@ export class PostPreviewComponent {
     'This is a comment',
     'This is another comment'
   ];
-  newComment = '';
+  // newComment = '';
 
-  submitComment() {
-    if (this.newComment) {
-      this.comments.push(this.newComment);
-      this.newComment = '';
-  }
-}
-  deleteComment(index: number) {
-    this.comments.splice(index, 1);
-}
+  // submitComment() {
+  //   if (this.newComment) {
+  //     this.comments.push(this.newComment);
+  //     this.newComment = '';
+  // }
+// }
+//   deleteComment(index: number) {
+//     this.comments.splice(index, 1);
+// }
 
 
 
