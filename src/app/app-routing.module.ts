@@ -30,16 +30,13 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
-
   },
   {
     path: 'login',
     component: LoginComponent,
     resolve: {user: LoginResolver}
-
   },
   {
-
     path: 'home',
     component: HomeComponent,
   },
