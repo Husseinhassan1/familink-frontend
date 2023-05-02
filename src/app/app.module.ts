@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { PostFormComponent } from './components/post-form/post-form.component';
 import { PostPreviewComponent } from './components/post-preview/post-preview.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,10 +19,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { FollowinglistComponent } from './components/followinglist/followinglist.component';
 import {AdminComponent} from "./components/admin/admin.component";
 
+//import { CommentListComponentComponent } from './comment-list-component/comment-list-component.component';
+//import { CommentComponentComponent } from './comment-component/comment-component.component';
+//import { CommentListComponent } from './comment-list/comment-list.component';
+//import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     LoginComponent,
     SignupComponent,
     UserprofileComponent,
@@ -30,20 +36,24 @@ import {AdminComponent} from "./components/admin/admin.component";
     PostPreviewComponent,
     HomeComponent,
     AdminComponent,
+    //CommentListComponentComponent,
+    //CommentComponentComponent,
+    //CommentListComponent,
+    //CommentComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    NoopAnimationsModule,
-    BrowserAnimationsModule,
-    MatMenuModule,
-    MatIconModule,
     MatButtonModule,
-    MatButtonModule
-  ],
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatMenuModule,
+    FormsModule,
+    HttpClientModule
 
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
