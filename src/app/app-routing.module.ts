@@ -5,11 +5,12 @@ import {PostPreviewComponent} from './components/post-preview/post-preview.compo
 import {LoginComponent} from "./components/login/login.component";
 import {SignupComponent} from "./components/signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
-import {SignupResolver} from "./resolvers/signup.resolver";
+//import {UserProfileResolve} from "./resolvers/userprofile.resolver";
 import {HomeComponent} from "./components/home/home.component";
 import {UserprofileComponent} from "./components/userprofile/userprofile.component";
 import {FollowinglistComponent} from "./components/followinglist/followinglist.component";
 import {AdminComponent} from "./components/admin/admin.component";
+
 
 const routes: Routes = [
 
@@ -31,7 +32,11 @@ const routes: Routes = [
     component: SignupComponent,
   },
   {
-
+    path: 'login',
+    component: LoginComponent,
+    resolve: {user: LoginResolver}
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
