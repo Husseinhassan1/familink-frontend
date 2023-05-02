@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {SignupService} from "../services/signup.service";
-import {User} from "../models/user.model";
+import {SignupService} from "../../services/signup.service";
+import {User} from "../../models/user.model";
 
 @Component({
   selector: 'app-register',
@@ -20,7 +20,15 @@ export class SignupComponent {
 
   constructor(private router:Router, private signupService: SignupService) {
   }
+  isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    return emailRegex.test(email);
+  }
   signup() {
+    if (!this.isValidEmail(this.email)) {
+      this.errorMessage = 'Invalid email format';
+      return;
+    }
     if (this.password !== this.confirmPassword) {
       this.errorMessage = 'Passwords do not match';
       return;
@@ -31,6 +39,7 @@ export class SignupComponent {
         (user: User) => {
 
           this.router.navigate(['login']);
+
         },
         (error: string) => {
           this.errorMessage = error;

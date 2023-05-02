@@ -16,7 +16,7 @@ h1 {
 }
 
 form {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -50,6 +50,7 @@ input[type="password"] {
   font-size: 14px;
   color: #262626;
   background-color: #fafafa;
+  box-sizing: border-box;
 }
 
 button[type="submit"] {
@@ -84,4 +85,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.text-danger {
+  color: red;
 }
