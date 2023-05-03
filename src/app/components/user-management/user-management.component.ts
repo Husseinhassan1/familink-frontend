@@ -24,7 +24,8 @@ export class UserManagementComponent implements OnInit {
       const user: User = {
         id: i,
         username: `user${i}`,
-        fullName: `User ${i}`,
+        firstName: `User ${i}`,
+        lastName: `User ${i}`,
         email: `user${i}@example.com`,
         password: `password${i}`,
         isAdmin: false

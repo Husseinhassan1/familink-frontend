@@ -4,9 +4,13 @@
     <mat-cell *matCellDef="let user">{{ user.username }}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="fullName">
-    <mat-header-cell *matHeaderCellDef>Full Name</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.fullName }}</mat-cell>
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.firstName }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="email">
@@ -31,7 +35,7 @@
     </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="['username', 'fullName', 'email', 'isAdmin', 'actions']"></mat-header-row>
+  <mat-header-row *matHeaderRowDef="['username', 'firstName', 'lastName', 'email', 'isAdmin', 'actions']"></mat-header-row>
   <mat-row *matRowDef="let row; columns: ['username', 'fullName', 'email', 'isAdmin', 'actions'];"></mat-row>
 </mat-table>
 
