@@ -20,7 +20,6 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    resolve: {user: LoginResolver}
   },
   {
     path: 'post-form',
@@ -37,7 +36,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    resolve: {user: LoginResolver}
   },
   {
     path: 'home',
