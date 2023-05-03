@@ -1,7 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {User} from "../../models/user.model";
-import {UserService} from "../../services/user.service";
-import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
@@ -9,41 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.css']
 })
-// export class UserManagementComponent implements OnInit {
-//   users = [];
-//
-//   constructor(private router: Router) { }
-//
-//   ngOnInit(): void {
-//     // Generate some fake users for display
-//     for (let i = 0; i < 10; i++) {
-//       this.users.push({
-//         id: i,
-//         username: `user${i}`,
-//         fullName: `User ${i}`,
-//         email: `user${i}@example.com`
-//       });
-//     }
-//   }
-//
-//   goBack(): void {
-//     // Return to previous page
-//     this.router.navigate(['/admin']);
-//   }
-//
-//   editUser(user): void {
-//     // Navigate to the update page for the selected user
-//     this.router.navigate(['/admin/users', user.id, 'update']);
-//   }
-//
-//   deleteUser(user): void {
-//     // Delete the selected user
-//     const index = this.users.indexOf(user);
-//     if (index >= 0) {
-//       this.users.splice(index, 1);
-//     }
-//   }
-// }
+
 export class UserManagementComponent implements OnInit {
   users: User[] = [];
 

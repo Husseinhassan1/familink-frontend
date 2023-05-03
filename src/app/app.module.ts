@@ -20,6 +20,7 @@ import {AdminComponent} from "./components/admin/admin.component";
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { UserComponent } from './components/user/user.component';
 import {MatTableModule} from '@angular/material/table';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {MatTableModule} from '@angular/material/table';
     AdminComponent,
     UserManagementComponent,
     UserComponent,
+    UpdateUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,22 @@
-/* Instagram login page on desktop */
+/* Login page */
 
 body {
   background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 48px;
+  color: #262626;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 form {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -16,14 +27,6 @@ form {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-h1 {
-  text-align: center;
-  font-family: 'Lobster', cursive;
-  font-size: 48px;
-  color: #262626;
-  margin-bottom: 20px;
 }
 
 label {
@@ -37,6 +40,7 @@ label {
 }
 
 input[type="email"],
+input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
@@ -46,6 +50,7 @@ input[type="password"] {
   font-size: 14px;
   color: #262626;
   background-color: #fafafa;
+  box-sizing: border-box;
 }
 
 button[type="submit"] {
@@ -65,14 +70,23 @@ button[type="submit"]:hover {
   background-color: #0073aa;
 }
 
+p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
 a {
   color: #003569;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  margin-right: 10px;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+.text-danger {
+  color: red;
 }
