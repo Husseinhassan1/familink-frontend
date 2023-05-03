@@ -5,7 +5,9 @@ import {PostPreviewComponent} from './components/post-preview/post-preview.compo
 import {LoginComponent} from "./components/login/login.component";
 import {SignupComponent} from "./components/signup/signup.component";
 import {LoginResolver} from "./resolvers/login.resolver";
-import {SignupResolver} from "./resolvers/signup.resolver";
+//import {CommentsResolver} from "./resolvers/comment-resolver";
+
+//import {UserProfileResolve} from "./resolvers/userprofile.resolver";
 import {HomeComponent} from "./components/home/home.component";
 import {UserprofileComponent} from "./components/userprofile/userprofile.component";
 import {FollowinglistComponent} from "./components/followinglist/followinglist.component";
@@ -13,7 +15,9 @@ import {AdminComponent} from "./components/admin/admin.component";
 import {UserManagementComponent} from "./components/user-management/user-management.component";
 import {UpdateUserComponent} from "./components/update-user/update-user.component";
 
+
 const routes: Routes = [
+
 
   {
     path: '',
@@ -33,7 +37,11 @@ const routes: Routes = [
     component: SignupComponent,
   },
   {
-
+    path: 'login',
+    component: LoginComponent,
+    resolve: {user: LoginResolver}
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
@@ -59,8 +67,10 @@ const routes: Routes = [
     component: UpdateUserComponent,
   }
 
-];
+ // {path: 'comments/:id', component: CommentListComponent, resolve: {comments: CommentResolver}}
 
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

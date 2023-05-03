@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="post-preview.component.css">
 <div class="container">
   <h1>Sample Post Title</h1>
@@ -6,7 +5,7 @@
     <span>Category: <a href="#">Category Name</a></span>
     <span>Age: Teen</span>
     <span>Privacy: Private</span>
-    <span>Like Count: <span id="like-count">0</span></span>
+    <span>Like Count: <span id="like-count">{{ likeCount }} </span> </span>
   </p>
   <img src="https://via.placeholder.com/500x300" alt="Sample Image">
   <p class="desc">
@@ -29,50 +28,26 @@
     <span>Posted on: Jan 1, 2022</span>
     <span>Posted by: John Doe</span>
   </p>
-  <div class="comments">
-    <h3>Comments</h3>
-    <ul id="comments-list">
-      <li>No comments yet.</li>
-    </ul>
-    <form id="comment-form">
-      <label for="comment">Add a comment:</label><br>
-      <textarea id="comment" name="comment"></textarea><br>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+
+
+<!--  <div class="comments">-->
+<!--    <h3>Comments</h3>-->
+<!--    <ul id="comments-list">-->
+<!--      <li *ngFor="let comment of comments; let i = index">-->
+<!--        {{ comment }}-->
+<!--        <button (click)="deleteComment(i)">Delete</button>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--    <form (submit)="submitComment()">-->
+<!--      <label for="comment">Add a comment:</label><br>-->
+<!--      <textarea id="comment" name="comment" [(ngModel)]="newComment"></textarea><br>-->
+<!--      <button type="submit">Submit</button>-->
+<!--    </form>-->
+<!--  </div>-->
+
+
   <div class="likes">
-    <button id="like-button">Like</button>
-    <button id="unlike-button" style="display:none">Unlike</button>
+    <button id="like-button" (click)="onLikeButtonClick()">Like</button>
+    <button id="unlike-button" style="display:none" (click)="onUnlikeButtonClick()">Unlike</button>
   </div>
 </div>
-<script>
-  var likeCount = 0;
-  var liked = false;
-  function updateLikeCount() {
-    document.getElementById("like-count").innerHTML = likeCount;
-  }
-
-  function updateLikeButton() {
-    if (liked) {
-      document.getElementById("like-button").style.display = "none";
-      document.getElementById("unlike-button").style.display = "inline";
-    } else {
-      document.getElementById("like-button").style.display = "inline";
-      document.getElementById("unlike-button").style.display = "none";
-    }
-  }
-
-  document.getElementById("like-button").addEventListener("click", function() {
-    likeCount++;
-    liked = true;
-    updateLikeCount();
-    updateLikeButton();
-  });
-
-  document.getElementById("unlike-button").addEventListener("click", function() {
-    likeCount--;
-    liked = false;
-    updateLikeCount();
-    updateLikeButton();
-  });
-</script>
