@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import {catchError, Observable, throwError} from 'rxjs';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignupService {
-  private apiUrl = 'http://localhost:8080/auth/register';
+  private readonly apiUrl: string = `${environment.backendUrl}/auth/register`;
 
   constructor(private http: HttpClient) { }
 
