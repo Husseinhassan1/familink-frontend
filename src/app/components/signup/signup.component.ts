@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {SignupService} from "../../services/signup.service";
 import {User} from "../../models/user.model";
+import {Route} from "../../constants/route.enum";
 
 @Component({
   selector: 'app-register',
@@ -38,7 +39,7 @@ export class SignupComponent {
       .subscribe(
         (user: User) => {
 
-          this.router.navigate(['login']);
+          this.router.navigate([Route.EMPTY]);
 
         },
         (error: string) => {

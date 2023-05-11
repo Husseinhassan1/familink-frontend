@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {LoginService} from "../../services/login.service";
 import {User} from "../../models/user.model";
+import {Route} from "../../constants/route.enum";
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent {
           if (typeof result === 'string') {
             this.errorMessage = result;
           } else {
-            this.router.navigate(['home']);
+            this.router.navigate([Route.HOME]);
           }
         },
         (error: any) => {
