@@ -13,7 +13,7 @@ export class LoginService {
 
   getUser(email: string, password: string): Observable<User | string> {
     const body = { email, password };
-    const url = `${environment.backendUrl}/auth/authenticate`;
+    const url = `${environment.backendUrl}/api/auth/authenticate`;
     return this.http.post<User>(url, body);
 
     // return this.http.post<User>('http://localhost:8080/auth/authenticate', body);

@@ -8,7 +8,7 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class SignupService {
-  private readonly apiUrl: string = `${environment.backendUrl}/auth/register`;
+  private readonly apiUrl: string = `${environment.backendUrl}/api/auth/register`;
 
   constructor(private http: HttpClient) { }
 
