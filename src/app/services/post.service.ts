@@ -1,27 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Post} from "../models/post.model";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
   constructor(private http: HttpClient) { }
+  private readonly apiUrl: string = `${environment.backendUrl}/api/post`;
   getPosts() {
     return this.http.get('/api/posts');
   }
-  getPostById(id: string): Observable<Post> {
-    return this.http.get<Post>(`/api/posts/${id}`);
+  getPostById(postId: number): Observable<Post> {
+    return this.http.get<Post>(`${this.apiUrl}/${postId}`);
   }
-  createPost(post: any) {
-    return this.http.post('/api/posts', post);
+  createPost(post: Post): Observable<Post> {
+    return this.http.post<Post>(`${this.apiUrl}/create`, post);
   }
-  updatePost(post: any) {
-    return this.http.put(`/api/posts/${post.id}`, post);
+  updatePost(post: Post): Observable<Post> {
+    return this.http.put<Post>(`${this.apiUrl}/${post.id}`, post);
   }
-  deletePost(id: string) {
-    return this.http.delete(`/api/posts/${id}`);
+  deletePost(postId: number): Observable<null> {
+    this.http.delete(`${this.apiUrl}/${postId}`);
+    return of(null);
   }
 
 }
