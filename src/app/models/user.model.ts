@@ -3,7 +3,7 @@ export interface User {
   email: string;
   firstName: string;
   lastName: string;
-  username: string;
+  nickname: string;
   password: string;
   isAdmin?: boolean;
 }

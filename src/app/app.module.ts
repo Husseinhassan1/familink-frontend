@@ -22,6 +22,7 @@ import {UserManagementComponent} from './components/user-management/user-managem
 import {UserComponent} from './components/user/user.component';
 import {MatTableModule} from '@angular/material/table';
 import {UpdateUserComponent} from './components/update-user/update-user.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 //import { CommentListComponentComponent } from './comment-list-component/comment-list-component.component';
 //import { CommentComponentComponent } from './comment-component/comment-component.component';
@@ -43,6 +44,7 @@ import {UpdateUserComponent} from './components/update-user/update-user.componen
     UserManagementComponent,
     UserComponent,
     UpdateUserComponent,
+    CommentComponent,
 
     //CommentListComponentComponent,
     //CommentComponentComponent,
