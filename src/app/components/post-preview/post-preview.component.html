@@ -2,9 +2,9 @@
 <div class="container">
   <h1>Sample Post Title</h1>
   <p class="meta">
-    <span>Category: <a href="#">Category Name</a></span>
-    <span>Age: Teen</span>
-    <span>Privacy: Private</span>
+    <span>Category: <a href="#">Category Name</a></span><br>
+    <span>Age: Teen</span><br>
+    <span>Privacy: Private</span><br>
     <span>Like Count: <span id="like-count">{{ likeCount }} </span> </span>
   </p>
   <img src="https://via.placeholder.com/500x300" alt="Sample Image">
@@ -25,25 +25,24 @@
     </ul>
   </div>
   <p class="meta">
-    <span>Posted on: Jan 1, 2022</span>
+    <span>Posted on: Jan 1, 2022</span><br>
     <span>Posted by: John Doe</span>
   </p>
 
 
-<!--  <div class="comments">-->
-<!--    <h3>Comments</h3>-->
-<!--    <ul id="comments-list">-->
-<!--      <li *ngFor="let comment of comments; let i = index">-->
-<!--        {{ comment }}-->
-<!--        <button (click)="deleteComment(i)">Delete</button>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--    <form (submit)="submitComment()">-->
-<!--      <label for="comment">Add a comment:</label><br>-->
-<!--      <textarea id="comment" name="comment" [(ngModel)]="newComment"></textarea><br>-->
-<!--      <button type="submit">Submit</button>-->
-<!--    </form>-->
-<!--  </div>-->
+  <div class="comments">
+    <h3>Comments</h3>
+    <ul id="comments-list">
+      <li *ngFor="let comment of comments; let i = index">
+        {{ comment }}
+      </li>
+    </ul>
+   <!-- <form (submit)="addComment()">
+      <label for="comment">Add a comment:</label><br>
+      <textarea id="comment" name="comment" [(ngModel)]="newComment"></textarea><br>
+      <button type="submit">Submit</button>
+    </form>-->
+  </div>
 
 
   <div class="likes">

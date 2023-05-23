@@ -16,6 +16,6 @@ export class PostPreviewResolver implements Resolve<Post> {
     if (postId === null) {
       throw new Error('Post ID not found');
     }
-    return this.postService.getPostById(postId);
+    return this.postService.getPostById(Number(postId));
   }
 }

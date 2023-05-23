@@ -15,7 +15,7 @@ export class SignupComponent {
   password: string = '';
   firstName: string = '';
   lastName: string = '';
-  username: string = '';
+  nickname: string = '';
   confirmPassword: string = '';
   errorMessage: string = '';
 
@@ -35,7 +35,7 @@ export class SignupComponent {
       return;
     }
 
-    this.signupService.createUser(this.email, this.firstName, this.lastName, this.username, this.password)
+    this.signupService.createUser(this.email, this.firstName, this.lastName, this.nickname, this.password)
       .subscribe(
         (user: User) => {
 

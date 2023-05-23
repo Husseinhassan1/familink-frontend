@@ -23,7 +23,7 @@ export class UserManagementComponent implements OnInit {
     for (let i = 1; i <= num; i++) {
       const user: User = {
         id: i,
-        username: `user${i}`,
+        nickname: `user${i}`,
         firstName: `User ${i}`,
         lastName: `User ${i}`,
         email: `user${i}@example.com`,
