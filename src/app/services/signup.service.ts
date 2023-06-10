@@ -4,9 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import {catchError, Observable, throwError} from 'rxjs';
 import {environment} from "../../environments/environment";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SignupService {
   private readonly apiUrl: string = `${environment.backendUrl}/api/auth/register`;
 

@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import {environment} from "../../environments/environment";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LoginService {
 
   constructor(private http: HttpClient) { }

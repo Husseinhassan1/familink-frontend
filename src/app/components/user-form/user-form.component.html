@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container">
+    <mat-form-field appearance="outline" floatLabel="auto">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="auto">
+      <mat-label>Nickname</mat-label>
+      <input matInput formControlName="nickname" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="auto">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+    </mat-form-field>
+
+    <button type="submit" mat-flat-button color="primary">Update</button>
+  </div>
+</form>

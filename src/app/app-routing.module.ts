@@ -11,8 +11,10 @@ import {UserprofileComponent} from "./components/userprofile/userprofile.compone
 import {FollowinglistComponent} from "./components/followinglist/followinglist.component";
 import {AdminComponent} from "./components/admin/admin.component";
 import {UserManagementComponent} from "./components/user-management/user-management.component";
-import {UpdateUserComponent} from "./components/update-user/update-user.component";
 import {Route} from "./constants/route.enum";
+import {UserEditComponent} from "./components/user-edit/user-edit.component";
+import {ResolverProperty} from "./constants/resolver-property.enum";
+import {UserResolver} from "./resolvers/user.resolver";
 
 
 const routes: Routes = [
@@ -35,12 +37,12 @@ const routes: Routes = [
     component: SignupComponent,
   },
   {
-    path: 'home',
+    path: Route.HOME,
     component: HomeComponent,
   },
 
   {
-    path: 'userprofile',
+    path: Route.USER_PROFILE,
     component: UserprofileComponent,
   },
   {
@@ -48,19 +50,22 @@ const routes: Routes = [
     component: FollowinglistComponent,
   },
   {
-    path: 'admin',
-    component:AdminComponent,
+    path: Route.ADMIN,
+    component: AdminComponent,
   },
   {
-    path: 'user-management',
+    path: Route.USER_MANAGEMENT,
     component: UserManagementComponent,
   },
   {
-    path: 'update-user/userId',
-    component: UpdateUserComponent,
+    path: Route.USER_EDIT + '/' + Route.VARIABLE + Route.USER_ID,
+    component: UserEditComponent,
+    resolve: {
+      [ResolverProperty.USER]: UserResolver,
+    }
   }
 
- // {path: 'comments/:id', component: CommentListComponent, resolve: {comments: CommentResolver}}
+  // {path: 'comments/:id', component: CommentListComponent, resolve: {comments: CommentResolver}}
 
 
 ];
