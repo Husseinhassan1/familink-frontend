@@ -8,8 +8,8 @@
     <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
     <mat-cell *matCellDef="let user">{{ user.firstName }}</mat-cell>
   </ng-container>
-  <ng-container matColumnDef="firstName">
-    <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
     <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
   </ng-container>
 
@@ -36,7 +36,7 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="['username', 'firstName', 'lastName', 'email', 'isAdmin', 'actions']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['username', 'fullName', 'email', 'isAdmin', 'actions'];"></mat-row>
+  <mat-row *matRowDef="let row; columns: ['username', 'firstName', 'lastName', 'email', 'isAdmin', 'actions'];"></mat-row>
 </mat-table>
 
 <button mat-raised-button (click)="goBack()">Back</button>

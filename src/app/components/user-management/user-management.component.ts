@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {User} from "../../models/user.model";
 import {Router} from "@angular/router";
+import {Route} from "../../constants/route.enum";
 
 @Component({
   selector: 'app-crud-user',
@@ -35,8 +36,8 @@ export class UserManagementComponent implements OnInit {
     return users;
   }
 
-  updateUser(user: User) {
-    this.router.navigate(['/update-user', user.id]);
+  updateUser(userId: number): void {
+    this.router.navigate([Route.USER_EDIT, userId]);
   }
 
   deleteUser(user: User) {

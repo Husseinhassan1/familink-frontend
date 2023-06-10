@@ -1,34 +1,33 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {User} from "../models/user.model";
 import {environment} from "../../environments/environment";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
-  private readonly apiUrl: string = `${environment.backendUrl}/users`;
+  private baseUrl = `${environment.backendUrl}/api/user`;
 
-  // private apiUrl = 'http://localhost:3000/users';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http.get<User[]>(`${this.baseUrl}/list`);
+  }
+
+  getUser(userId: number): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/${userId}`);
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    return this.http.post<User>(this.baseUrl, user);
   }
 
   updateUser(user: User): Observable<User> {
-    const url = `${this.apiUrl}/${user.id}`;
-    return this.http.put<User>(url, user);
+    return this.http.put<User>(`${this.baseUrl}/${user.id}`, user);
   }
 
-  deleteUser(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<void>(url);
+  deleteUser(userId: number): Observable<null> {
+    this.http.delete(`${this.baseUrl}/${userId}`);
+    return of(null);
   }
 }

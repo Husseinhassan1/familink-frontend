@@ -8,6 +8,10 @@ export enum Route {
   VARIABLE = ':',
   ADD = 'add',
   SIGNUP = 'signup',
+  USER_PROFILE = 'userprofile',
+  ADMIN = 'admin',
+  USER_MANAGEMENT = 'user-management',
+  USER_EDIT = 'user-edit',
 
 
 }

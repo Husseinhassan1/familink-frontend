@@ -1,0 +1,5 @@
+<div class="container">
+  <h2>Edit User</h2>
+  <app-user-form (saveUser)="updateUser($event)" [user]="user"></app-user-form>
+  <button mat-stroked-button color="warn" class="action-button" (click)="deleteUser()">Delete</button>
+</div>
