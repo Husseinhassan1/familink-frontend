@@ -1,52 +1,40 @@
 <link rel="stylesheet" href="post-preview.component.css">
 <div class="container">
-  <h1>Sample Post Title</h1>
+  <h1>{{ post?.title }}</h1>
   <p class="meta">
     <span>Category: <a href="#">Category Name</a></span><br>
-    <span>Age: Teen</span><br>
-    <span>Privacy: Private</span><br>
-    <span>Like Count: <span id="like-count">{{ likeCount }} </span> </span>
+    <span>Age: {{ post?.age }}</span><br>
+    <span>Privacy: {{ post?.privacy }}</span><br>
+    <span>Like Count: <span id="like-count">{{ likeCount }}</span></span>
   </p>
-  <img src="https://via.placeholder.com/500x300" alt="Sample Image">
-  <p class="desc">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor eu velit in ullamcorper.
-    Morbi tincidunt sollicitudin mi, sed vehicula est finibus at. In hendrerit malesuada purus,
-    sed dictum leo hendrerit id. Nunc sollicitudin elementum est, at vestibulum nibh hendrerit
-    sit amet. Vivamus gravida, odio in varius bibendum, ipsum felis efficitur elit, nec suscipit
-    sapien lectus vel risus. Sed sed convallis orci. Pellentesque tincidunt ligula a leo pretium,
-    eget efficitur magna imperdiet. Fusce ac sapien eget dolor aliquam auctor non ac lorem.
-    Integer quis efficitur felis. Praesent euismod volutpat nisi sit amet efficitur.
-  </p>
+  <img src="{{ post?.image }}" alt="Sample Image">
+  <p class="desc">{{ post?.description }}</p>
   <div class="tags">
     <ul>
-      <li>Tag 1</li>
-      <li>Tag 2</li>
-      <li>Tag 3</li>
+      <li *ngFor="let tag of post?.tags">{{ tag }}</li>
     </ul>
   </div>
   <p class="meta">
-    <span>Posted on: Jan 1, 2022</span><br>
-    <span>Posted by: John Doe</span>
+    <span>Posted on: {{ post?.postedOn | date:'dd MMM yyyy' }}</span><br>
+    <span>Posted by: {{ post?.postedBy }}</span>
   </p>
-
 
   <div class="comments">
     <h3>Comments</h3>
     <ul id="comments-list">
       <li *ngFor="let comment of comments; let i = index">
-        {{ comment }}
+        {{ comment.content }}
       </li>
     </ul>
-   <!-- <form (submit)="addComment()">
+    <form (ngSubmit)="submitComment()">
       <label for="comment">Add a comment:</label><br>
       <textarea id="comment" name="comment" [(ngModel)]="newComment"></textarea><br>
       <button type="submit">Submit</button>
-    </form>-->
+    </form>
   </div>
-
 
   <div class="likes">
     <button id="like-button" (click)="onLikeButtonClick()">Like</button>
-    <button id="unlike-button" style="display:none" (click)="onUnlikeButtonClick()">Unlike</button>
+    <button id="unlike-button" [style.display]="liked ? 'block' : 'none'" (click)="onUnlikeButtonClick()">Unlike</button>
   </div>
 </div>

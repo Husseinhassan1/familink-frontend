@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-// import { CommentsService} from "../services/comment.service";
-// import { Comment } from "../models/comment.model";
+import {CommentsService} from "../../services/comment.service";
+import { Comment } from "../../models/comment.model";
+import {Post} from "../../models/post.model";
+import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'app-post',
@@ -8,10 +10,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-preview.component.css']
 })
 export class PostPreviewComponent {
-  // constructor(private commentsService: CommentsService) {}
+  constructor(private postService: PostService, private commentsService: CommentsService) { }
 
+  post: Post | undefined;
   likeCount: number = 0;
   liked: boolean = false;
+  comments: Comment[] = [];
+  newComment: string = '';
+
+  ngOnInit() {
+    this.fetchComments();
+  }
+
+  fetchComments() {
+    this.commentsService.getComments().subscribe((comments: Comment[]) => {
+      this.comments = comments;
+    });
+  }
+
 
   updateLikeButton() {
     if (this.liked) {
@@ -30,23 +46,21 @@ export class PostPreviewComponent {
       this.updateLikeButton();
     }
   }
-  //comments$ = this.commentsService.comments$;
+  submitComment() {
+    if (this.newComment) {
+      const newComment: Comment = {
+        content: this.newComment,
+        userId: 0 // Update with the appropriate userId
+      };
 
-  comments: string[] = [
-    'This is a comment',
-    'This is another comment'
-  ];
-  // newComment = '';
+      this.comments.push(newComment);
+      this.newComment = '';
+    }
+  }
 
-  // submitComment() {
-  //   if (this.newComment) {
-  //     this.comments.push(this.newComment);
-  //     this.newComment = '';
-  // }
-// }
-//   deleteComment(index: number) {
-//     this.comments.splice(index, 1);
-// }
+  deleteComment(index: number) {
+    this.comments.splice(index, 1);
+  }
 
 
 }

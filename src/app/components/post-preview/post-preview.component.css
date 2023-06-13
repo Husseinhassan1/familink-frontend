@@ -1,176 +1,85 @@
-/*
-colours:
-#D88C9A
-#F2D0A9
-#F1E3D3
-#99C1B9
-#8E7DBE
-*/
-
-body {
-  font-family: 'Lobster', cursive;
-  font-size: 16px;
-  background-color: #F1E3D3;
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
-  font-size: 48px;
-  text-align: center;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #F2D0A9;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  text-align: justify;
-}
-
-.title input {
-  width: 100%;
   font-size: 24px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #D88C9A;
-  margin-bottom: 20px;
-  text-align: center;
+  margin-bottom: 10px;
 }
 
-.desc textarea {
+.meta {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.meta span {
+  margin-right: 10px;
+}
+
+.meta a {
+  color: blue;
+  text-decoration: none;
+}
+
+.desc {
+  margin-bottom: 20px;
+}
+
+img {
   width: 100%;
-  height: 200px;
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #D88C9A;
+  height: auto;
   margin-bottom: 20px;
 }
 
-.age select {
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #99C1B9;
-  margin-bottom: 20px;
+.tags ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .tags li {
   display: inline-block;
   margin-right: 10px;
+  background-color: #f8e0e0;
   padding: 5px 10px;
-  background-color: #8E7DBE;
-  border-radius: 5px;
-  color: white;
+  border-radius: 20px;
 }
 
-.privacy label {
-  margin-right: 20px;
+.comments {
+  margin-top: 20px;
 }
 
-input[type="submit"] {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  background-color: #D88C9A;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+.comments h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.post-preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+#comments-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.post-preview .post-image {
-  max-width: 400px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-
-.post-preview .post-content {
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  background-color: #F2D0A9;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  text-align: justify;
-}
 .likes button {
-  background-color: #D88C9A;
-  color: #fff;
+  padding: 10px 20px;
+  background-color: #FFB6C1;
+  color: white;
   border: none;
-  border-radius: 50%;
-  padding: 10px 15px;
-  font-size: 16px;
+  border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
 }
 
-.likes button:hover {
-  background-color: #F2D0A9;
+#unlike-button {
+  background-color: #FF93A5;
 }
 
-.likes #like-button::before {
-  content: "\2665";
-  font-size: 20px;
-  margin-right: 5px;
+#like-count {
+  font-weight: bold;
 }
-
-.likes #unlike-button::before {
-  content: "\2661";
-  font-size: 20px;
-  margin-right: 5px;
-}
-
-.likes #unlike-button {
-  display: none;
-}
-
 
 #comment-form {
   margin-top: 20px;
-}
-
-#comment-form label {
-  display: block;
-  font-size: 18px;
-  color: #8E7DBE;
-  margin-bottom: 5px;
-}
-
-#comment-form textarea {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #F1E3D3;
-  color: #D88C9A;
-  margin-bottom: 10px;
-}
-
-#comment-form button {
-  background-color: #8E7DBE;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#comment-form button:hover {
-  background-color: #99C1B9;
 }

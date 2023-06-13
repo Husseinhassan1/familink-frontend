@@ -21,13 +21,17 @@
 
   <input id="file" type="file" (change)="fileSelected($event)" accept="image/*">
 
-  <div class="tags">
-    <ul class="tags">
-      <li>Tag 1</li>
-      <li>Tag 2</li>
-      <li>Tag 3</li>
-    </ul>
+  <div>
+    <input type="text" [(ngModel)]="tagInput" (keydown.enter)="addTag()" placeholder="Enter a tag">
+    <div class="tag-container">
+    <span *ngFor="let tag of tags" [ngClass]="{ 'highlighted': tag === currentTag }">
+      {{ tag }}
+      <button (click)="onTagRemoved(tag)" class="remove-button">×</button>
+    </span>
+    </div>
   </div>
+
+
 
   <div class="privacy">
     <label><input type="radio" name="privacy" value="private">private</label>

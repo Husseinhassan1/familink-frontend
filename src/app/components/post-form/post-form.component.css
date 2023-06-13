@@ -1,81 +1,66 @@
-/* Global styles */
-body {
-  font-family: 'Lobster', cursive;
-  font-size: 16px;
-}
-
 .container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #F2D0A9;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Title input */
-.title input {
-  width: 100%;
-  font-size: 24px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #D88C9A;
+.title, .desc, .age, .tag-container, .privacy {
   margin-bottom: 20px;
 }
 
-/* Description textarea */
-.desc textarea {
+input[type="text"],
+textarea,
+select {
   width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
   height: 150px;
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #D88C9A;
-  margin-bottom: 20px;
 }
 
-/* Age Group select */
-.age mat-select {
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #99C1B9;
-  margin-bottom: 20px;
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/* File input */
-.file input[type="file"] {
-  display: block;
-  margin-top: 10px;
-}
-
-/* Tags input and chips */
-.tags mat-chip {
-  display: inline-block;
-  margin-right: 10px;
+.tag-container span {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
   padding: 5px 10px;
-  background-color: #8E7DBE;
-  border-radius: 5px;
+  background-color: #f8e0e0;
+  border-radius: 20px;
 }
 
-.tags mat-form-field {
-  width: 100%;
+.tag-container .highlighted {
+  color: #FF69B4;
 }
 
-/* Privacy radio buttons */
-.privacy mat-radio-button {
-  margin-right: 20px;
-}
-
-/* Submit button */
-button[mat-raised-button] {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  background-color: #D88C9A;
-  color: #fff;
+.remove-button {
+  background: none;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  color: red;
   cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #FFB6C1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF93A5;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
