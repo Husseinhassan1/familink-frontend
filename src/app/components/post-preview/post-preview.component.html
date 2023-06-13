@@ -34,15 +34,16 @@
     <h3>Comments</h3>
     <ul id="comments-list">
       <li *ngFor="let comment of comments; let i = index">
-        {{ comment }}
+        {{ comment.content }} <!-- Display the comment content -->
       </li>
     </ul>
-   <!-- <form (submit)="addComment()">
+    <form (ngSubmit)="submitComment()">
       <label for="comment">Add a comment:</label><br>
       <textarea id="comment" name="comment" [(ngModel)]="newComment"></textarea><br>
       <button type="submit">Submit</button>
-    </form>-->
+    </form>
   </div>
+
 
 
   <div class="likes">

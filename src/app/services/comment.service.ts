@@ -15,8 +15,8 @@ export class CommentsService {
     return this.http.get<Comment[]>(this.apiUrl);
   }
 
- // addComment(contenrt: String): Observable<Comment> {
-   // return this.http.post<Comment>(this.apiUrl, );}
+   addComment(content: String): Observable<Comment> {
+    return this.http.post<Comment>(this.apiUrl, content);}
 
   deleteComment(id: number): Observable<Comment> {
     const url = `${this.apiUrl}/${id}`;

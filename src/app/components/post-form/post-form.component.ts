@@ -15,6 +15,8 @@ export class PostFormComponent {
   ageGroup: string = 'kids';
   public imagePath?: SafeUrl | undefined;
   tags: string[] = [];
+  tagInput: string = '';
+  currentTag: string = '';
   privacy: string = 'private';
   newTag?: string = ''; // Define newTag variable
 
@@ -40,10 +42,6 @@ export class PostFormComponent {
     }
   }
 
-  onTagAdded(tag: string) {
-    this.tags.push(tag);
-  }
-
   onTagRemoved(tag: string) {
     const index = this.tags.indexOf(tag);
     if (index > -1) {
@@ -51,6 +49,15 @@ export class PostFormComponent {
     }
   }
 
+  addTag() {
+    const newTag = this.tagInput.trim();
+    if (newTag !== '' && !this.tags.includes(newTag)) {
+      this.tags.push(newTag);
+    }
+    this.currentTag = newTag;
+    this.tagInput = '';
+
+  }
   onSubmit() {
     // Handle form submission
     console.log('Form submitted');
@@ -61,4 +68,6 @@ export class PostFormComponent {
     console.log('Tags:', this.tags);
     console.log('Privacy:', this.privacy);
   }
+
+
 }
