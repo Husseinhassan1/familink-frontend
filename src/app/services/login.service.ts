@@ -3,16 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import {Observable, tap} from 'rxjs';
 import { User } from '../models/user.model';
 import {environment} from "../../environments/environment";
-import {LoginResponse} from "../components/login/login-response.interface";
+
 
 @Injectable()
 export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<LoginResponse> {
+  login(email: string, password: string): Observable<User> {
     const payload = { email: email, password: password };
-    return this.http.post<LoginResponse>(`${environment.backendUrl}/api/auth/authenticate`, payload);
+    return this.http.post<User>(`${environment.backendUrl}/api/auth/authenticate`, payload);
   }
 
   // private refreshTokenUrl = `${environment.backendUrl}/api/auth/refresh-token`;
