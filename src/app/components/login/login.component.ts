@@ -3,7 +3,6 @@ import {Router} from "@angular/router";
 import {LoginService} from "../../services/login.service";
 import {User} from "../../models/user.model";
 import {Route} from "../../constants/route.enum";
-import {LoginResponse} from "./login-response.interface";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -34,8 +33,9 @@ export class LoginComponent implements OnInit{
       const password = this.loginForm.get('password')?.value;
 
       this.loginService.login(email, password).subscribe(
-        (response: LoginResponse) => {
-          localStorage.setItem('token', response.token);
+        (data: any) => {
+          localStorage.setItem('accessToken', data.access_token);
+          localStorage.setItem('refreshToken', data.refresh_token);
           localStorage.setItem('email', email);
           this.router.navigate([Route.HOME]);
         },
