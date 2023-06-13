@@ -29,11 +29,18 @@ export class PostFormComponent {
       reader.readAsDataURL(file);
       reader.onload = () => {
         console.log(reader.result);
-
+        const currentUser = localStorage.getItem('user');
+        const currentDate = new Date();
         const post : Post = {
-          age: "", description: "", privacy: "",
+          id: 0,
+          postedBy: currentUser ? JSON.parse(currentUser) : "",
+          age: "",
+          description: "",
+          privacy: "",
           title: fileName,
-          image: reader.result as string
+          image: reader.result as string,
+          postedOn: currentDate,
+          tags: []
         }
         this.postService.sendImage(post).subscribe(() => {
           console.log('image uploaded');

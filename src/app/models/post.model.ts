@@ -7,4 +7,6 @@ export interface Post {
   image?: string;
   tags?: string[];
   privacy: string;
+  postedOn: Date;
+  postedBy: string;
 }

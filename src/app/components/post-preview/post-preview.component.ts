@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {CommentsService} from "../../services/comment.service";
 import { Comment } from "../../models/comment.model";
+import {Post} from "../../models/post.model";
+import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'app-post',
@@ -8,12 +10,24 @@ import { Comment } from "../../models/comment.model";
   styleUrls: ['./post-preview.component.css']
 })
 export class PostPreviewComponent {
-  constructor(private commentsService: CommentsService) {}
+  constructor(private postService: PostService, private commentsService: CommentsService) { }
 
+  post: Post | undefined;
   likeCount: number = 0;
   liked: boolean = false;
   comments: Comment[] = [];
   newComment: string = '';
+
+  ngOnInit() {
+    this.fetchComments();
+  }
+
+  fetchComments() {
+    this.commentsService.getComments().subscribe((comments: Comment[]) => {
+      this.comments = comments;
+    });
+  }
+
 
   updateLikeButton() {
     if (this.liked) {
@@ -31,14 +45,6 @@ export class PostPreviewComponent {
       this.likeCount--;
       this.updateLikeButton();
     }
-  }
-  fetchComments() {
-    this.commentsService.getComments().subscribe((comments: Comment[]) => {
-      this.comments = comments;
-    });
-  }
-  ngOnInit() {
-    this.fetchComments();
   }
   submitComment() {
     if (this.newComment) {
