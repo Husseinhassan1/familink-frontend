@@ -26,5 +26,8 @@ export class PostService {
     this.http.delete(`${this.apiUrl}/${postId}`);
     return of(null);
   }
+  sendImage(post: Post): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}`, post);
+  }
 
 }

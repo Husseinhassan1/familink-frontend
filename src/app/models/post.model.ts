@@ -1,10 +1,10 @@
 export interface Post {
 
-  id: number;
+  id?: number;
   title: string;
   description: string;
   age: string;
-  file: File;
-  tags: string[];
+  image?: string;
+  tags?: string[];
   privacy: string;
 }
