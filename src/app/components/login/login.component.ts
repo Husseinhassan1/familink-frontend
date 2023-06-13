@@ -1,42 +1,48 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {LoginService} from "../../services/login.service";
 import {User} from "../../models/user.model";
 import {Route} from "../../constants/route.enum";
+import {LoginResponse} from "./login-response.interface";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
-  email: string = '';
-  password: string = '';
-  errorMessage: string = '';
+  loginForm!: FormGroup;
 
-  constructor(private router:Router, private loginService: LoginService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginService: LoginService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
   login() {
-    this.loginService.getUser(this.email, this.password)
-      .subscribe(
-        (result: User | string) => {
-          if (typeof result === 'string') {
-            this.errorMessage = result;
-          } else {
-            this.router.navigate([Route.HOME]);
-          }
+    if (this.loginForm.valid) {
+      const email = this.loginForm.get('email')?.value;
+      const password = this.loginForm.get('password')?.value;
+
+      this.loginService.login(email, password).subscribe(
+        (response: LoginResponse) => {
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('email', email);
+          this.router.navigate([Route.HOME]);
         },
-        (error: any) => {
-          this.errorMessage = error.message;
+        (error) => {
+          console.error('login failed', error);
         }
       );
+    }
   }
-
-
-  forgotPassword() {
-    this.router.navigate(['forgot-password']);
-  }
-
 }

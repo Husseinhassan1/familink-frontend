@@ -1,51 +1,41 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {User} from "../../models/user.model";
-import {Router} from "@angular/router";
-import {Route} from "../../constants/route.enum";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user.model';
+import { Route } from '../../constants/route.enum';
 
 @Component({
   selector: 'app-crud-user',
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.css']
 })
-
 export class UserManagementComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit() {
-    // Generate fake users
-    this.users = this.generateFakeUsers(10);
+    this.getUsers();
   }
 
-  generateFakeUsers(num: number): User[] {
-    const users: User[] = [];
-    for (let i = 1; i <= num; i++) {
-      const user: User = {
-        id: i,
-        nickname: `user${i}`,
-        firstName: `User ${i}`,
-        lastName: `User ${i}`,
-        email: `user${i}@example.com`,
-        password: `password${i}`,
-        isAdmin: false
-      };
-      users.push(user);
-    }
-    return users;
+  getUsers(): void {
+    this.userService.getUsers().subscribe((users) => {
+      this.users = users;
+    });
   }
 
   updateUser(userId: number): void {
     this.router.navigate([Route.USER_EDIT, userId]);
   }
 
-  deleteUser(user: User) {
-    const index = this.users.indexOf(user);
-    this.users.splice(index, 1);
+  deleteUser(user: User): void {
+    this.userService.deleteUser(user.id).subscribe(() => {
+      const index = this.users.indexOf(user);
+      this.users.splice(index, 1);
+    });
   }
 
-  goBack() {
+  goBack(): void {
     history.back();
   }
 }
