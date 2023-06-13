@@ -8,7 +8,7 @@ import {YesNoDialogComponent} from "../yes-no-dialog/yes-no-dialog.component";
 import {Route} from "../../constants/route.enum";
 
 @Component({
-  selector: 'app-useredit',
+  selector: 'app-user-edit',
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.css']
 })

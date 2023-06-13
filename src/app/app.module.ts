@@ -9,7 +9,7 @@ import {PostPreviewComponent} from './components/post-preview/post-preview.compo
 import {LoginComponent} from './components/login/login.component';
 import {SignupComponent} from "./components/signup/signup.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HomeComponent} from "./components/home/home.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UserprofileComponent} from "./components/userprofile/userprofile.component";
@@ -35,6 +35,7 @@ import {UserService} from "./services/user.service";
 import {UserprofileService} from "./services/userprofile.service";
 import {CommentsService} from "./services/comment.service";
 import {UserResolver} from "./resolvers/user.resolver";
+import {AuthInterceptor} from "./interceptors/auth.interceptor";
 
 //import { CommentListComponentComponent } from './comment-list-component/comment-list-component.component';
 //import { CommentComponentComponent } from './comment-component/comment-component.component';
@@ -95,7 +96,12 @@ import {UserResolver} from "./resolvers/user.resolver";
     UserService,
     UserprofileService,
     CommentsService,
-    UserResolver
+    UserResolver,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

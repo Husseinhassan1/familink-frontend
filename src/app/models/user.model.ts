@@ -6,4 +6,5 @@ export interface User {
   nickname: string;
   password: string;
   isAdmin?: boolean;
+  token?: string;
 }
