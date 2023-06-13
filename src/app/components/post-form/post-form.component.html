@@ -19,9 +19,7 @@
     </select>
   </div>
 
-  <div class="file">
-    <input type="file" id="myFile" name="filename">
-  </div>
+  <input id="file" type="file" (change)="fileSelected($event)" accept="image/*">
 
   <div class="tags">
     <ul class="tags">
@@ -36,5 +34,8 @@
     <label><input type="radio" name="privacy" value="public">public</label>
   </div>
 
-  <button routerLink="/post-preview">Preview Post</button>
+  <button (click)="onSubmit()">Submit</button>
+<!--  <button routerLink="/post-preview">Preview Post</button>-->
+
+
 </div>
