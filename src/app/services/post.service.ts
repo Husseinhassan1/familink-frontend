@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Post} from "../models/post.model";
 import {Observable, of} from "rxjs";
 import {environment} from "../../environments/environment";
@@ -14,6 +14,14 @@ export class PostService {
     return this.http.get('/api/posts');
   }
   getPostById(postId: number): Observable<Post> {
+    const accessToken = localStorage.getItem("accessToken")
+    const headerDict = {
+      'Authorization': "Bearer " + accessToken
+    }
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict),
+    };
     return this.http.get<Post>(`${this.apiUrl}/${postId}`);
   }
   createPost(post: Post): Observable<Post> {

@@ -44,7 +44,7 @@ export class UserEditComponent implements OnInit{
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.userService.deleteUser(this.user.id).subscribe(() => {
           this.navigateToUserManagement();

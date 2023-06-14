@@ -58,7 +58,7 @@ const routes: Routes = [
     component: UserManagementComponent,
   },
   {
-    path: Route.USER_EDIT + '/' + Route.VARIABLE + Route.USER_ID,
+    path: Route.USER_MANAGEMENT + '/' + Route.USER_EDIT + '/:' + Route.USER_ID,
     component: UserEditComponent,
     resolve: {
       [ResolverProperty.USER]: UserResolver,

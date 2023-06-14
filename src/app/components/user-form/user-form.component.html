@@ -1,25 +1,25 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()" class="mt-5 custom-form">
   <div class="container">
-    <mat-form-field appearance="outline" floatLabel="auto">
+    <mat-form-field appearance="outline" floatLabel="auto" class="form-field">
       <mat-label>First Name</mat-label>
-      <input matInput formControlName="firstName" />
+      <input matInput formControlName="firstName" class="form-input" />
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="form-field">
       <mat-label>Last Name</mat-label>
-      <input matInput formControlName="lastName" />
+      <input matInput formControlName="lastName" class="form-input" />
     </mat-form-field>
 
-    <mat-form-field appearance="outline" floatLabel="auto">
+    <mat-form-field appearance="outline" floatLabel="auto" class="form-field">
       <mat-label>Nickname</mat-label>
-      <input matInput formControlName="nickname" />
+      <input matInput formControlName="nickname" class="form-input" />
     </mat-form-field>
 
-    <mat-form-field appearance="outline" floatLabel="auto">
+    <mat-form-field appearance="outline" floatLabel="auto" class="form-field">
       <mat-label>Password</mat-label>
-      <input matInput formControlName="password" type="password" />
+      <input matInput formControlName="password" type="password" class="form-input" />
     </mat-form-field>
 
-    <button type="submit" mat-flat-button color="primary">Update</button>
+    <button type="submit" mat-flat-button color="primary" class="custom-button">Update</button>
   </div>
 </form>

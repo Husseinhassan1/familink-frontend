@@ -1,0 +1,14 @@
+.edit-user-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.edit-user-container h2 {
+  font-size: 24px;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  margin-top: 20px;
+}
