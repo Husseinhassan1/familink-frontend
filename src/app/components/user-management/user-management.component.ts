@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 import { Route } from '../../constants/route.enum';
@@ -12,7 +12,7 @@ import { Route } from '../../constants/route.enum';
 export class UserManagementComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) {}
 
   ngOnInit() {
     this.getUsers();
@@ -24,8 +24,8 @@ export class UserManagementComponent implements OnInit {
     });
   }
 
-  updateUser(userId: number): void {
-    this.router.navigate([Route.USER_EDIT, userId]);
+  updateUser(user: User): void {
+    this.router.navigate([`${Route.USER_EDIT}/${user.id}`], { relativeTo: this.route });
   }
 
   deleteUser(user: User): void {
