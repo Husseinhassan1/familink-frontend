@@ -12,12 +12,12 @@ export class PostFormComponent {
 
   title: string = '';
   description: string = '';
-  ageGroup: string = 'kids';
+  ageGroup: string = '';
   public imagePath?: SafeUrl | undefined;
   tags: string[] = [];
   tagInput: string = '';
   currentTag: string = '';
-  privacy: string = 'private';
+  privacy: string = '';
   newTag?: string = ''; // Define newTag variable
 
   constructor(private postService: PostService) { }
@@ -47,6 +47,12 @@ export class PostFormComponent {
         });
       };
     }
+  }
+
+  create() {
+    this.postService.createPost(post).subscribe(() => {
+      console.log('Post created');
+    });
   }
 
   onTagRemoved(tag: string) {

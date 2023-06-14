@@ -36,16 +36,12 @@ export class PostPreviewComponent {
       this.liked = true;
     }
   }
-  onLikeButtonClick() {
+
+  onLikeButtonClick() { //one like per user
     this.likeCount++;
     this.updateLikeButton();
   }
-  onUnlikeButtonClick() {
-    if (this.likeCount > 0) {
-      this.likeCount--;
-      this.updateLikeButton();
-    }
-  }
+
   submitComment() {
     if (this.newComment) {
       const newComment: Comment = {
@@ -58,9 +54,14 @@ export class PostPreviewComponent {
     }
   }
 
+
+/*
+only the user to whom the post belongs should delete the comments?
+should the user be able to delete other users' comments?
   deleteComment(index: number) {
     this.comments.splice(index, 1);
   }
+*/
 
 
 }

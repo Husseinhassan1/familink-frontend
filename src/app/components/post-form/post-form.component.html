@@ -1,3 +1,4 @@
+<form (ngSubmit)="onSubmit()">
 <div class="container">
   <div class="title">
     <label for="title"></label>
@@ -32,14 +33,14 @@
   </div>
 
 
-
   <div class="privacy">
     <label><input type="radio" name="privacy" value="private">private</label>
     <label><input type="radio" name="privacy" value="public">public</label>
   </div>
 
-  <button (click)="onSubmit()">Submit</button>
+  <button type="submit">Submit</button>
 <!--  <button routerLink="/post-preview">Preview Post</button>-->
 
 
 </div>
+</form>
