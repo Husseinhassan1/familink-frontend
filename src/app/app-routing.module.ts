@@ -15,6 +15,7 @@ import {Route} from "./constants/route.enum";
 import {UserEditComponent} from "./components/user-edit/user-edit.component";
 import {ResolverProperty} from "./constants/resolver-property.enum";
 import {UserResolver} from "./resolvers/user.resolver";
+import {FollowerlistComponent} from "./components/followerlist/followerlist.component";
 
 
 const routes: Routes = [
@@ -49,6 +50,11 @@ const routes: Routes = [
     path: 'userprofile/followinglist',
     component: FollowinglistComponent,
   },
+  {
+    path: 'userprofile/followerlist',
+    component: FollowerlistComponent,
+  },
+
   {
     path: Route.ADMIN,
     component: AdminComponent,

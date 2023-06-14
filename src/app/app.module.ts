@@ -36,6 +36,7 @@ import {UserprofileService} from "./services/userprofile.service";
 import {CommentsService} from "./services/comment.service";
 import {UserResolver} from "./resolvers/user.resolver";
 import {AuthInterceptor} from "./interceptors/auth.interceptor";
+import { FollowerlistComponent } from './components/followerlist/followerlist.component';
 
 //import { CommentListComponentComponent } from './comment-list-component/comment-list-component.component';
 //import { CommentComponentComponent } from './comment-component/comment-component.component';
@@ -60,6 +61,7 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
     CommentComponent,
     UserEditComponent,
     YesNoDialogComponent,
+    FollowerlistComponent,
 
     //CommentListComponentComponent,
     //CommentComponentComponent,
