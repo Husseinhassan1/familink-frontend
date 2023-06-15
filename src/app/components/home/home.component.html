@@ -20,16 +20,16 @@
   </form>
 </header>
 <main>
-  <div class="post">
+  <div class="post" *ngFor="let post of posts">
     <div class="post-header">
       <img src="https://via.placeholder.com/50x50" alt="Avatar" />
       <div class="post-info">
-        <h2>Username</h2>
-        <p>Posted on March 31, 2023</p>
+        <h2>{{post.title}}</h2>
+<!--        <p>{{post.postedOn}}</p>-->
       </div>
     </div>
     <div class="post-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod tortor ac ante pulvinar, a ullamcorper sapien aliquam. Vivamus vel nunc in urna interdum scelerisque vel non magna.</p>
+      <h4>{{post.description}}</h4>
     </div>
     <div class="post-footer">
       <button>Like</button>
