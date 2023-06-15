@@ -12,7 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HomeComponent} from "./components/home/home.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {UserprofileComponent} from "./components/userprofile/userprofile.component";
+import {UserProfileComponent} from "./components/userprofile/userprofile.component";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -32,10 +32,12 @@ import {SignupService} from "./services/signup.service";
 import {PostService} from "./services/post.service";
 import {HomeService} from "./services/home.service";
 import {UserService} from "./services/user.service";
-import {UserprofileService} from "./services/userprofile.service";
+import {UserProfileService} from "./services/userprofile.service";
+import {UserProfileResolver} from "./resolvers/userprofile.resolver";
 import {CommentsService} from "./services/comment.service";
 import {UserResolver} from "./resolvers/user.resolver";
 import {AuthInterceptor} from "./interceptors/auth.interceptor";
+import { FollowerlistComponent } from './components/followerlist/followerlist.component';
 
 //import { CommentListComponentComponent } from './comment-list-component/comment-list-component.component';
 //import { CommentComponentComponent } from './comment-component/comment-component.component';
@@ -48,7 +50,7 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
 
     LoginComponent,
     SignupComponent,
-    UserprofileComponent,
+    UserProfileComponent,
     FollowinglistComponent,
     PostFormComponent,
     PostPreviewComponent,
@@ -60,6 +62,7 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
     CommentComponent,
     UserEditComponent,
     YesNoDialogComponent,
+    FollowerlistComponent,
 
     //CommentListComponentComponent,
     //CommentComponentComponent,
@@ -94,9 +97,10 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
     PostService,
     HomeService,
     UserService,
-    UserprofileService,
+    UserProfileService,
     CommentsService,
     UserResolver,
+    UserProfileResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

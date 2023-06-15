@@ -1,0 +1,47 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<head></head>
+<body>
+
+<main>
+
+  <div class="list">
+    <div class="line">
+      <div class="user">
+        <div class="profile">
+          <img src="https://flxt.tmsimg.com/assets/1443_v9_bc.jpg" alt="" width="50px" height="50px">
+        </div>
+        <div class="details">
+          <h1 class="name">Keeanu Reeves</h1>
+          <h3 class="username">@keeanu</h3>
+        </div>
+      </div>
+      <div class="status">
+        <span></span>
+        <p>active</p>
+      </div>
+      <div class="location">
+        <p>Florida</p>
+      </div>
+      <div class="phone">
+        +342342432523
+      </div>
+      <div class="contact">
+        <a style="text-decoration: none;" href="#" class="btn">Following</a>
+      </div>
+      <div class="action">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Report</button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+
+
+</body>
