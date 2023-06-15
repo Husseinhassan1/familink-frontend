@@ -12,7 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HomeComponent} from "./components/home/home.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {UserprofileComponent} from "./components/userprofile/userprofile.component";
+import {UserProfileComponent} from "./components/userprofile/userprofile.component";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -32,7 +32,8 @@ import {SignupService} from "./services/signup.service";
 import {PostService} from "./services/post.service";
 import {HomeService} from "./services/home.service";
 import {UserService} from "./services/user.service";
-import {UserprofileService} from "./services/userprofile.service";
+import {UserProfileService} from "./services/userprofile.service";
+import {UserProfileResolver} from "./resolvers/userprofile.resolver";
 import {CommentsService} from "./services/comment.service";
 import {UserResolver} from "./resolvers/user.resolver";
 import {AuthInterceptor} from "./interceptors/auth.interceptor";
@@ -49,7 +50,7 @@ import { FollowerlistComponent } from './components/followerlist/followerlist.co
 
     LoginComponent,
     SignupComponent,
-    UserprofileComponent,
+    UserProfileComponent,
     FollowinglistComponent,
     PostFormComponent,
     PostPreviewComponent,
@@ -96,9 +97,10 @@ import { FollowerlistComponent } from './components/followerlist/followerlist.co
     PostService,
     HomeService,
     UserService,
-    UserprofileService,
+    UserProfileService,
     CommentsService,
     UserResolver,
+    UserProfileResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

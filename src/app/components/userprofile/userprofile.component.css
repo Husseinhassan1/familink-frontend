@@ -20,6 +20,9 @@ ul {
 a {
   text-decoration: none;
 }
+.btn{
+  background-color: black;
+}
 
 .header__wrapper header {
   width: 100%;
@@ -49,16 +52,16 @@ a {
   display: block;
   box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
 }
-.header__wrapper .cols__container .left__col .img__container span {
-  position: absolute;
-  background: #2afa6a;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  bottom: 3px;
-  right: 11px;
-  border: 2px solid #fff;
-}
+/*.header__wrapper .cols__container .left__col .img__container span {*/
+/*  position: absolute;*/
+/*  background: #2afa6a;*/
+/*  width: 16px;*/
+/*  height: 16px;*/
+/*  border-radius: 50%;*/
+/*  bottom: 3px;*/
+/*  right: 11px;*/
+/*  border: 2px solid #fff;*/
+/*}*/
 .header__wrapper .cols__container .left__col h2 {
   margin-top: 60px;
   font-weight: 600;

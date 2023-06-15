@@ -5,9 +5,9 @@ import {PostPreviewComponent} from './components/post-preview/post-preview.compo
 import {LoginComponent} from "./components/login/login.component";
 import {SignupComponent} from "./components/signup/signup.component";
 //import {CommentsResolver} from "./resolvers/comment-resolver";
-//import {UserProfileResolve} from "./resolvers/userprofile.resolver";
+import {UserProfileResolver} from "./resolvers/userprofile.resolver";
 import {HomeComponent} from "./components/home/home.component";
-import {UserprofileComponent} from "./components/userprofile/userprofile.component";
+import {UserProfileComponent} from "./components/userprofile/userprofile.component";
 import {FollowinglistComponent} from "./components/followinglist/followinglist.component";
 import {AdminComponent} from "./components/admin/admin.component";
 import {UserManagementComponent} from "./components/user-management/user-management.component";
@@ -44,7 +44,10 @@ const routes: Routes = [
 
   {
     path: Route.USER_PROFILE,
-    component: UserprofileComponent,
+    component: UserProfileComponent,
+    resolve: {
+      userProfile: UserProfileResolver,
+    },
   },
   {
     path: 'userprofile/followinglist',

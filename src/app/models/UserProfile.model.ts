@@ -1,4 +1,9 @@
 export interface UserProfile {
-id: number;
-UserName: string;
+  id: number;
+  nickname: string;
+  email: string;
+  bio: string;
+  followers: number;
+  following: number;
+  photos: string[];
 }
